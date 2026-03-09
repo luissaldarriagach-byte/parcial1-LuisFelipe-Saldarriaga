@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TechStore</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand">TechStore</a>
+
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="container mt-4">
+        <h1>Bienvenidos a TechStore</h1>
+        <p id="descripcion">La mejor tienda de tecnología.</p>
+
+        <button class="btn btn-primary" onclick="cambiarTexto()">Cambiar texto</button>
+        <button class="btn btn-secondary" onclick="modoOscuro()">Modo oscuro</button>
+    </header>
+
+    <section class="container mt-5" id="productos">
+
+        <h2>Productos</h2>
+
+        <div class="row">
+
+            <div class="col-md-4">
+                <img src="img/laptop.jpg" class="img-fluid">
+                <h4>Laptop Gamer</h4>
+                <p>Potente laptop para juegos</p>
+                <button class="btn btn-success" onclick="agregarCarrito()">Agregar</button>
+            </div>
+
+            <div class="col-md-4">
+                <img src="img/mouse.jpg" class="img-fluid">
+                <h4>Mouse Gamer</h4>
+                <p>Alta precisión</p>
+                <button class="btn btn-success" onclick="agregarCarrito()">Agregar</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="container mt-5" id="contacto">
+
+        <h2>Contacto</h2>
+
+        <form id="formContacto">
+
+            <input type="text" id="nombre" placeholder="Nombre" class="form-control mb-2">
+
+            <input type="email" id="correo" placeholder="Correo" class="form-control mb-2">
+
+            <textarea id="mensaje" class="form-control mb-2"></textarea>
+
+            <button class="btn btn-primary" onclick="enviarFormulario()">Enviar</button>
+
+        </form>
+
+    </section>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
