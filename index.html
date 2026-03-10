@@ -1,19 +1,26 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechStore</title>
-    <link rel="stylesheet" href="css/styles.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
+    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand">TechStore</a>
+            <a class="navbar-brand" href="#">TechStore</a>
 
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
                 <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
@@ -21,109 +28,204 @@
         </div>
     </nav>
 
+
     <header class="container mt-4">
         <h1>Bienvenidos a TechStore</h1>
         <p id="descripcion">La mejor tienda de tecnología.</p>
 
         <button class="btn btn-primary" onclick="cambiarTexto()">Cambiar texto</button>
-        <button class="btn btn-secondary" onclick="modoOscuro()">Modo oscuro</button>
+     >
+        <button class="btn btn-secondary" id="btnModo" onclick="cambiarModo()">Modo oscuro</button>
     </header>
 
+  
     <section class="container mt-5" id="productos">
-
         <h2>Productos</h2>
+        <div class="row g-3">
 
-        <div class="row">
-
+            
             <div class="col-md-4">
-                <img src="img/laptop.jpg" class="img-fluid">
-                <h4>Laptop Gamer</h4>
-                <p>Potente laptop para juegos</p>
-                <button class="btn btn-success" onclick="agregarCarrito()">Agregar</button>
+                <div class="card producto h-100">
+                    <div class="card-body">
+                        <span class="badge bg-primary mb-2">Computadores</span>
+                        <h4 class="card-title">Laptop Gamer</h4>
+                        <p class="card-text">Potente laptop para juegos de alto rendimiento.</p>
+                        <p class="fw-bold">$3.500.000</p>
+                        <button class="btn btn-success w-100" onclick="agregarCarrito('Laptop Gamer')">Agregar</button>
+                    </div>
+                </div>
+            </div>
+
+            <
+            <div class="col-md-4">
+                <div class="card producto h-100">
+                    <div class="card-body">
+                        <span class="badge bg-primary mb-2">Computadores</span>
+                        <h4 class="card-title">PC de Escritorio</h4>
+                        <p class="card-text">Ideal para trabajo y entretenimiento en casa.</p>
+                        <p class="fw-bold">$2.800.000</p>
+                        <button class="btn btn-success w-100" onclick="agregarCarrito('PC de Escritorio')">Agregar</button>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="col-md-4">
+                <div class="card producto h-100">
+                    <div class="card-body">
+                        <span class="badge bg-warning text-dark mb-2">Periféricos</span>
+                        <h4 class="card-title">Mouse Gamer</h4>
+                        <p class="card-text">Alta precisión con 12000 DPI ajustables.</p>
+                        <p class="fw-bold">$150.000</p>
+                        <button class="btn btn-success w-100" onclick="agregarCarrito('Mouse Gamer')">Agregar</button>
+                    </div>
+                </div>
             </div>
 
             <div class="col-md-4">
-                <img src="img/mouse.jpg" class="img-fluid">
-                <h4>Mouse Gamer</h4>
-                <p>Alta precisión</p>
-                <button class="btn btn-success" onclick="agregarCarrito()">Agregar</button>
-            </div>
-            <div class="col-md-4">
-                <img src="img/audifonos.jpg" class="img-fluid">  
-                <h4>Audifonos Gamer</h4>
-                <p>cancelacion de sonido</p>
-                <button class="btn btn-success" onclick="agregarCarrito()">Agregar</button>
-
+                <div class="card producto h-100">
+                    <div class="card-body">
+                        <span class="badge bg-warning text-dark mb-2">Periféricos</span>
+                        <h4 class="card-title">Teclado Mecánico</h4>
+                        <p class="card-text">Switches mecánicos para mayor durabilidad.</p>
+                        <p class="fw-bold">$280.000</p>
+                        <button class="btn btn-success w-100" onclick="agregarCarrito('Teclado Mecánico')">Agregar</button>
+                    </div>
+                </div>
             </div>
 
+         
             <div class="col-md-4">
-                <img src="img/cableEthernet.jpg" class="img-fluid">  
-                <h4>Cable Ethernet</h4>
-                <p>Velocidad de transferencia rápida</p>
-                <button class="btn btn-success" onclick="agregarCarrito()">Agregar</button>
-
+                <div class="card producto h-100">
+                    <div class="card-body">
+                        <span class="badge bg-warning text-dark mb-2">Periféricos</span>
+                        <h4 class="card-title">Audífonos Gamer</h4>
+                        <p class="card-text">Sonido envolvente 7.1 con micrófono incluido.</p>
+                        <p class="fw-bold">$320.000</p>
+                        <button class="btn btn-success w-100" onclick="agregarCarrito('Audífonos Gamer')">Agregar</button>
+                    </div>
+                </div>
             </div>
 
+         
             <div class="col-md-4">
-                <img src="img/pantallaOled.jpg" class="img-fluid">  
-                <h4>Pantalla Oled</h4>
-                <p>Resolución 4K</p>
-                <button class="btn btn-success" onclick="agregarCarrito()">Agregar</button>
-
+                <div class="card producto h-100">
+                    <div class="card-body">
+                        <span class="badge bg-danger mb-2">Monitores</span>
+                        <h4 class="card-title">Monitor 4K</h4>
+                        <p class="card-text">Pantalla 27 pulgadas con resolución Ultra HD.</p>
+                        <p class="fw-bold">$1.200.000</p>
+                        <button class="btn btn-success w-100" onclick="agregarCarrito('Monitor 4K')">Agregar</button>
+                    </div>
+                </div>
             </div>
 
+          
             <div class="col-md-4">
-                <img src="img/TecladoGamer.jpg" class="img-fluid">  
-                <h4>Teclado gamer</h4>
-                <p>Teclas mecánicas con fluidez</p>
-                <button class="btn btn-success" onclick="agregarCarrito()">Agregar</button>
-
+                <div class="card producto h-100">
+                    <div class="card-body">
+                        <span class="badge bg-danger mb-2">Monitores</span>
+                        <h4 class="card-title">Monitor Curvo</h4>
+                        <p class="card-text">Experiencia inmersiva con pantalla curva 144hz.</p>
+                        <p class="fw-bold">$950.000</p>
+                        <button class="btn btn-success w-100" onclick="agregarCarrito('Monitor Curvo')">Agregar</button>
+                    </div>
+                </div>
             </div>
 
+           
             <div class="col-md-4">
-                <img src="img/MousePad.jpg" class="img-fluid">  
-                <h4>Mouse Pad</h4>
-                <p> Mayor Superficie de agarre</p>
-                <button class="btn btn-success" onclick="agregarCarrito()">Agregar</button>
-
+                <div class="card producto h-100">
+                    <div class="card-body">
+                        <span class="badge bg-info text-dark mb-2">Almacenamiento</span>
+                        <h4 class="card-title">Disco SSD 1TB</h4>
+                        <p class="card-text">Velocidad de lectura de hasta 3500 MB/s.</p>
+                        <p class="fw-bold">$380.000</p>
+                        <button class="btn btn-success w-100" onclick="agregarCarrito('Disco SSD 1TB')">Agregar</button>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4">
-                <img src="img/GraficaNvidia.jpg" class="img-fluid">  
-                <h4>Tarjeta Gráfica Nvidia</h4>
-                <p>Performance de alto rendimiento</p>
-                <button class="btn btn-success" onclick="agregarCarrito()">Agregar</button>
 
-            </div>
+           
             <div class="col-md-4">
-                <img src="img/Arduino.jpg" class="img-fluid">  
-                <h4>Arduino UNO</h4>
-                <p>Arduino version uno</p>
-                <button class="btn btn-success" onclick="agregarCarrito()">Agregar</button>
-
+                <div class="card producto h-100">
+                    <div class="card-body">
+                        <span class="badge bg-info text-dark mb-2">Almacenamiento</span>
+                        <h4 class="card-title">Memoria RAM 16GB</h4>
+                        <p class="card-text">DDR5 a 5200MHz para máximo rendimiento.</p>
+                        <p class="fw-bold">$420.000</p>
+                        <button class="btn btn-success w-100" onclick="agregarCarrito('Memoria RAM 16GB')">Agregar</button>
+                    </div>
+                </div>
             </div>
 
         </div>
     </section>
 
-    <section class="container mt-5" id="contacto">
-
+    <section class="container mt-5 mb-5" id="contacto">
         <h2>Contacto</h2>
 
-        <form id="formContacto">
+        <div class="col-md-6">
+          
+            <input type="text" id="apellidos" placeholder="Apellidos" class="form-control mb-2">
+            <input type="number" id="edad" placeholder="Edad" class="form-control mb-2">
 
-            <input type="text" id="nombre" placeholder="Nombre" class="form-control mb-2">
+          
+            <select id="genero" class="form-control mb-2">
+                <option value="">Seleccione género</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Otro">Otro</option>
+            </select>
 
-            <input type="email" id="correo" placeholder="Correo" class="form-control mb-2">
+            <input type="text" id="direccion" placeholder="Dirección" class="form-control mb-2">
+            <input type="tel" id="telefono" placeholder="Teléfono (10 dígitos)" class="form-control mb-2">
+            <input type="email" id="correo" placeholder="Correo electrónico" class="form-control mb-2">
 
-            <textarea id="mensaje" class="form-control mb-2"></textarea>
-
-            <button class="btn btn-primary" onclick="enviarFormulario()">Enviar</button>
-
-        </form>
-
+         
+            <button type="button" class="btn btn-primary" onclick="enviarFormulario()">Enviar</button>
+        </div>
     </section>
 
-    <script src="js/script.js"></script>
+  
+    <div class="modal fade" id="modalCarrito" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Producto agregado</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="mensajeCarrito">
+                  
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalFormulario" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Información enviada</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="mensajeFormulario">
+               
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+
 </body>
 
 </html>
